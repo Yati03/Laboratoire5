@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "597784155910",
+    "project_id": "laboratoire5-7b150",
+    "storage_bucket": "laboratoire5-7b150.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597784155910:android:3863af211194bc464b7087",
+        "android_client_info": {
+          "package_name": "uottawa.engineering.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "597784155910-7f2hc6pk0bma81lem4g1rq72ulr6uddt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhpAxrHGo7K5vM2JqVaQJiYDvRlBEQtCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "597784155910-7f2hc6pk0bma81lem4g1rq72ulr6uddt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
