@@ -31,10 +31,8 @@ public class ProductList extends ArrayAdapter<Product> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.activity_product_list, null, true);
-
         TextView textViewName = (TextView) listViewItem.findViewById(R.id.textViewName);
         TextView textViewPrice = (TextView) listViewItem.findViewById(R.id.textViewPrice);
-
         Product product = products.get(position);
         textViewName.setText(product.getProductName());
         textViewPrice.setText(String.valueOf(product.getPrice()));
