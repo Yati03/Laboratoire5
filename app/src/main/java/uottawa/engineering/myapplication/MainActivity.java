@@ -8,6 +8,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.AdapterView;
 import android.widget.Spinner;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listViewProducts;
     EditText editTextName= findViewById(R.id.editTextName);
     EditText editTextPrice=findViewById(R.id.editTextPrice);
+    Button BnAdd=findViewById(R.id.addButton);
 
     protected void onStart(){
         super.onStart();
@@ -51,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         databaseProducts=FirebaseDatabase.getInstance().getReference("products");
+        BnAdd.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                addProduct();
+            }
+        });
     }
 
     private void addProduct(){
