@@ -57,9 +57,32 @@ public class MainActivity extends AppCompatActivity {
         String name = editTextName.getText().toString().trim();
         double price = Double.parseDouble(String.valueOf(editTextPrice.getText().toString()));
         if(!TextUtils.isEmpty(name)){
+            String id = databaseProducts.push().getKey();
+
+            Product product= new Product(id, name, price);
+
+            databaseProducts.child(id).setValue(product);
+
+            editTextName.setText("");
+            editTextPrice.setText("");
             Toast.makeText(this, "Product added", Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
         }
+
+    }
+
+    private void updateProduct(String id, String name, double price){
+        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("products").child(id);
+        Product product = new Product(id, name, price);
+        dR.setValue(product);
+        Toast.makeText(getApplicationContext(), "Product Updated", Toast.LENGTH_LONG).show();
+    }
+
+    private boolean deleteProduct(String id){
+        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("products").child(id);
+        dR.removeValue();
+        Toast.makeText(getApplicationContext(), "Product deleted", Toast.LENGTH_LONG).show();
+        return true;
     }
 }
